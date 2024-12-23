@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 2000px; /* To enable scrolling */
+}
+
+.tab-container {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2px;
+  border-radius: 9px;
+  background: white;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroller {
+  content: "";
+  width: 10px;
+  height: 135px;
+  opacity: 0.4;
+  background: rosybrown;
+  position: absolute;
+  top: 5px;
+  right: -17px;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  border-radius: 7px;
+}
+
+.indicator {
+  content: "";
+  width: 5px; 
+  height: 28px;
+  background: rosybrown;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  z-index: 9;
+  border: 0.5px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 7px;
+  transition: all 0.2s ease-out;
+}
+
+.tab {
+  width: 100px;
+  height: 28px;
+  position: absolute;
+  z-index: 99;
+  outline: none;
+  opacity: 0;
+}
+
+.tab_label {
+  width: 200px;
+  height: 50px;
+  position: relative;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tab--1:checked ~ .indicator {
+  top: 8px;
+}
+
+.tab--2:checked ~ .indicator {
+  top: calc(28px * 2 + 2px);
+}
+
+.tab--3:checked ~ .indicator {
+  top: calc(26.5px * 4 + 1px);
+}
+
+.tab--4:checked ~ .indicator {
+  top: calc(28px * 6 + 2px);
+}
+
+/* Floating Button Styles */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rosybrown;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+}
